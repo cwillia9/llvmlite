@@ -179,7 +179,7 @@ class IRBuilder(object):
     @contextlib.contextmanager
     def _branch_helper(self, bbenter, bbexit):
         self.position_at_end(bbenter)
-        yield bbexit
+        yield bbenter
         if self.basic_block.terminator is None:
             self.branch(bbexit)
 
